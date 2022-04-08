@@ -11,7 +11,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## What is git? 
 
-Git is version control software i.e. it can be used as a way to back up your work and to go back to earlier versions if you need to. The files are kept in repositories ("repos" to the cool kids!) - the local repo is on your machine/server and the web-based repo (the 'remote') is on <https://github.com>. The repo on github can be open to the public or kept private. You may have used github in the past as somewhere to put your code/data for journal publications but you may not have used it when developing your work. This page gives some links to more info on git and a brief overview of how to use it once you have git on your machine.
+Git is version control software i.e. it can be used as a way to back
+up your work, collaborate with others and to go back to earlier
+versions if you need to. The files are kept in repositories ("repos"
+to the cool kids!) - the local repo is in your local file storage and
+the web-based repo (the 'remote') is hosted on a server, for example
+<https://github.com>. The repo on GitHub can be open to the public or
+kept private. You may have used GitHub in the past as somewhere to put
+your code/data for journal publications but you may not have used it
+when developing your work. This page gives some links to more info on
+git and a brief overview of how to use it once you have git on your
+machine.
 
 ### Some links
 
@@ -26,15 +36,22 @@ Git is version control software i.e. it can be used as a way to back up your wor
 
 ### How to use git
 
-I will give a brief overview below but see <https://git-scm.com/book/en/v2> for more details.
+I will give a brief overview below but see
+<https://git-scm.com/book/en/v2> for more details.
 
-Firstly make sure you have git on your machine (try typing 'git') and then declare a folder/directory on your machine as a git repo (this is done locally - no connection with the internet required!). To do this on linux, go into the folder you want and type: 
+Firstly make sure you have git on your machine (try typing 'git') and
+then declare a folder/directory on your machine as a git repo (this is
+done locally - no connection with the internet required!). To do this
+on linux, go into the folder you want and type:
 
 ```{r eval=FALSE}
 git init
 ```
 
-To save files to your local repo you need to tell git to add the files and then you do a commit (you must add a comment describing this commit). So basically it is a two stage process to save your files to the repo each time, eg. to add the Rscripts in your folder:
+To save files to your local repo you need to tell git to add the files
+and then you do a commit (you must add a comment describing this
+commit). So basically it is a two stage process to save your files to
+the repo each time, eg. to add the Rscripts in your folder:
 
 ```{r eval=FALSE}
 git add *.R
@@ -42,9 +59,19 @@ git add *.R
 git commit -m 'add all my Rscripts'
 ```
 
-If you want to then copy these files to the web based repo on github, you go to  <https://github.com> and make a new repository and then set this URL to have the short name 'origin' (for example) and then 'push' your files to it.
+You can view what git believes has changed at any point with:
 
-Note, you will need a personal access token (PAT) to push to the web repo - see <https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token>
+```{r eval=FALSE}
+git status
+```
+
+If you want to then copy these files to the web based repo on github,
+you go to <https://github.com> and make a new repository. 
+
+Then in your local repository create a remote branch with the short
+name 'origin' (for example). 
+
+Finally, 'push' your files to it.
 
 ```{r eval=FALSE}
 git remote add origin https://github.com/HelenKettle/OpenScience.git 
@@ -52,7 +79,14 @@ git remote add origin https://github.com/HelenKettle/OpenScience.git
 git push origin master 
 ```
 
-From now on, you can work as usual and when you want to commit to the local repo you simply add the appropriate files, commit them, then push to the remote repo as required:
+Note, you will need a personal access token (PAT) to push to the web
+repo - see
+<https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token>
+
+
+From now on, you can work as usual and when you want to commit to the
+local repo you simply add the appropriate files, commit them, then
+push to the remote repo as required:
 
 ```{r eval=FALSE}
 git add *.R
@@ -62,6 +96,4 @@ git commit -m 'some new things happened' ##do not use this comment!
 git push origin master 
 
 ```
-
-
 
