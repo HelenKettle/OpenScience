@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## What is git? 
 
-Git is version control software i.e. it can be used as a way to back up your work and to go back to earlier versions if you need to. The files are kept in repositories ("repos" to the cool kids!) - the local repo is on your machine/server and the web-based repo is on <https://github.com>. The repo on github can be open to the public or kept private. You may have used github in the past as somewhere to put your code/data for journal publications but you may not have used it when developing your work. This page gives some links to more info on git and a brief overview of how to use it once you have git on your machine.
+Git is version control software i.e. it can be used as a way to back up your work and to go back to earlier versions if you need to. The files are kept in repositories ("repos" to the cool kids!) - the local repo is on your machine/server and the web-based repo (the 'remote') is on <https://github.com>. The repo on github can be open to the public or kept private. You may have used github in the past as somewhere to put your code/data for journal publications but you may not have used it when developing your work. This page gives some links to more info on git and a brief overview of how to use it once you have git on your machine.
 
 ### Some links
 
@@ -28,7 +28,7 @@ Git is version control software i.e. it can be used as a way to back up your wor
 
 I will give a brief overview below but see <https://git-scm.com/book/en/v2> for more details.
 
-Firstly make sure you have git on your machine and then declare a folder/directory on your machine as a git repo (this is done locally - no connection with the internet required!). On linux, go into the folder you want and type: 
+Firstly make sure you have git on your machine (try typing 'git') and then declare a folder/directory on your machine as a git repo (this is done locally - no connection with the internet required!). To do this on linux, go into the folder you want and type: 
 
 ```{r eval=FALSE}
 git init
@@ -43,6 +43,8 @@ git commit -m 'add all my Rscripts'
 ```
 
 If you want to then copy these files to the web based repo on github, you go to  <https://github.com> and make a new repository and then set this URL to have the short name 'origin' (for example) and then 'push' your files to it.
+
+Note, you will need a personal access token (PAT) to push to the web repo - see <https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token>
 
 ```{r eval=FALSE}
 git remote add origin https://github.com/HelenKettle/OpenScience.git 
@@ -60,7 +62,6 @@ git commit -m 'some new things happened' ##do not use this comment!
 git push origin master 
 
 ```
-
 
 
 
