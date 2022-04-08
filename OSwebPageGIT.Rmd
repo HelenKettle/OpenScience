@@ -52,7 +52,7 @@ git remote add origin https://github.com/HelenKettle/OpenScience.git
 git push origin master 
 ```
 
-From now on, you can work as usual and when you want to commit to the local repo you simply add the appropriate files, commit then push to the remote repo as required:
+From now on, you can work as usual and when you want to commit to the local repo you simply add the appropriate files, commit them, then push to the remote repo as required:
 
 ```{r eval=FALSE}
 git add *.R
